@@ -18,11 +18,7 @@ import TimelineSection from './TimelineSection';
 import ReflectionSection from './ReflectionSection';
 import ContactSection from './ContactSection';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout = () => {
   const [activePage, setActivePage] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -61,6 +57,7 @@ const Layout = ({ children }: LayoutProps) => {
         return <HeroSection />;
     }
   };
+
 
   return (
     <div className="layout">
@@ -113,7 +110,7 @@ const Layout = ({ children }: LayoutProps) => {
 
         {/* Page Content */}
         <div className="page-content">
-          {children || renderPageContent()}
+          {renderPageContent()}
         </div>
       </main>
 
