@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout';
 
 const Index = () => {
-  return <Layout />;
+  return <Layout>{null}</Layout>;
 };
 
 export default Index;

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,6 +75,8 @@ const Navigation = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden relative p-2 text-foreground/70 hover:text-foreground transition-all duration-300 rounded-lg hover:bg-primary/5"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            title={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
               <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
@@ -97,12 +98,11 @@ const Navigation = () => {
         }`}>
           <div className="pt-4 pb-6 border-t border-gray-200/50">
             <div className="flex flex-col space-y-2">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
                   className="text-left px-4 py-3 text-foreground/70 hover:text-foreground hover:bg-primary/5 transition-all duration-300 font-medium rounded-lg group"
-                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <span className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>

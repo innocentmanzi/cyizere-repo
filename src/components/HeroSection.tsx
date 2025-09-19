@@ -1,6 +1,5 @@
 import { Download, Linkedin } from 'lucide-react';
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 const HeroSection = () => {
   const handleDownloadCV = async () => {

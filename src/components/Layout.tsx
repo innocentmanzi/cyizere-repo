@@ -104,6 +104,8 @@ const Layout = ({ children }: LayoutProps) => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="mobile-menu-btn"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            title={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -111,7 +113,7 @@ const Layout = ({ children }: LayoutProps) => {
 
         {/* Page Content */}
         <div className="page-content">
-          {renderPageContent()}
+          {children || renderPageContent()}
         </div>
       </main>
 
@@ -130,6 +132,8 @@ const Layout = ({ children }: LayoutProps) => {
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mobile-close-btn"
+                aria-label="Close menu"
+                title="Close menu"
               >
                 <X size={24} />
               </button>
